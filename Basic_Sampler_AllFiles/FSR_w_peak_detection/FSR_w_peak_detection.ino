@@ -1,9 +1,9 @@
-int nfsrs = 2;
-int fsr[] = {A0,A1};
-int val[2];
-int thresh[] = {110,320};
-boolean peakgate[] = {true, true};
-int pval[2] ;
+int nfsrs = 1;
+int fsr[] = {A0};
+int val[1];
+int thresh[] = {350};
+boolean peakgate[] = {true};
+int pval[1] ;
 
 void setup() {
   Serial.begin(9600);
@@ -13,8 +13,8 @@ void loop() {
   for (int i = 0; i < nfsrs; i++) {
     val[i] = analogRead(fsr[i]); //read analog pins
     //Print out raw fsr value
-    // Serial.print("fsr" + String(i) + ":");
-     //Serial.println(val[i], DEC);
+     //Serial.print("fsr" + String(i) + ":");
+    // Serial.println(val[i], DEC);
 
     //Peak Detection
     if (val[i] > thresh[i]) { //if above threshold
